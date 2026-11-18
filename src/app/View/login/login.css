@@ -1,0 +1,33 @@
+.login-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.login-tarjeta {
+  width: 100%;
+  max-width: 380px;
+  padding: 16px;
+}
+
+mat-card-header {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}

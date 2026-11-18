@@ -1,0 +1,40 @@
+@let isHandset = this.isHandset();
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="isHandset ? 'dialog' : 'navigation'"
+    [mode]="isHandset ? 'over' : 'side'"
+    [opened]="isHandset === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list> 
+      <a mat-list-item href="/Inicio">Inicio</a>
+      <a mat-list-item href="/Catalogo">Catálogo</a>
+      <a mat-list-item href="/Categorias">Categorías</a>
+      <a mat-list-item href="/Clientes">Clientes</a>
+      <a mat-list-item href="/Inventario">Inventario</a>
+      <a mat-list-item href="/Compras">Compras</a>
+      <a mat-list-item href="/NuevoProducto">Nuevo producto</a>
+      <a mat-list-item href="/NuevoCliente">Nuevo cliente</a>
+      <a mat-list-item href="/NuevaCompra">Nueva compra</a>
+      <a mat-list-item href="/Reportes">Reportes</a>
+      <a mat-list-item href="/Formulario">Formulario</a>
+      <a mat-list-item href="/Login">Login</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="background-color: rgb(255, 183, 77);">
+      @if (isHandset) {
+        <button type="button" aria-label="Toggle sidenav" matIconButton (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+      <span>🐶 PetDog</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -2,11 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "ada5a462-d202-4084-be2b-178b968532b8"
   },
   "newProjectRoot": "projects",
   "projects": {
-    "Lulosa": {
+    "PetDog": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -24,9 +25,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/material-theme.scss", "src/styles.css"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
@@ -62,12 +61,15 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "port": 4202
+          },
           "configurations": {
             "production": {
-              "buildTarget": "Lulosa:build:production"
+              "buildTarget": "PetDog:build:production"
             },
             "development": {
-              "buildTarget": "Lulosa:build:development"
+              "buildTarget": "PetDog:build:development"
             }
           },
           "defaultConfiguration": "development"

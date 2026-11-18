@@ -1,0 +1,51 @@
+<div class="login-contenedor">
+  <mat-card class="login-tarjeta" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>PetDog</mat-card-title>
+      <mat-card-subtitle>Iniciar sesión</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="Loguear()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+
+          <input matInput type="email" formControlName="user" />
+
+          @if (form.get('user')?.hasError('required')) {
+            <mat-error>ingrese</mat-error>
+
+          }
+
+          @if (form.get('user')?.hasError('email')) {
+            <mat-error>Invalid email</mat-error>
+          }
+
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Passworddd</mat-label>
+
+          <input matInput type="password" formControlName="password" />
+
+          @if (form.get('password')?.hasError('required')) {
+            <mat-error>ingrese contraseña</mat-error>
+          }
+
+          @if (form.get('password')?.hasError('minlength')) {
+            <mat-error>Minimum 6 characters</mat-error>
+          }
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="form.invalid"
+        >
+          Login
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,3 +1,29 @@
 import { Routes } from '@angular/router';
+import { Inicio } from './View/inicio/inicio';
+import { Catalogo } from './View/catalogo/catalogo';
+import { Categorias } from './View/categorias/categorias';
+import { Clientes } from './View/clientes/clientes';
+import { Inventario } from './View/inventario/inventario';
+import { Compras } from './View/compras/compras';
+import { Form } from './Components/form/form';
+import { NuevoCliente } from './View/nuevo-cliente/nuevo-cliente';
+import { NuevaCompra } from './View/nueva-compra/nueva-compra';
+import { Reportes } from './View/reportes/reportes';
+import { Formulario } from './View/formulario/formulario';
+import { Login } from './View/login/login';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    { path: '', component: Inicio },
+    { path: 'Inicio', component: Inicio },
+    { path: 'Catalogo', component: Catalogo },
+    { path: 'Categorias', component: Categorias },
+    { path: 'Clientes', component: Clientes },
+    { path: 'Inventario', component: Inventario },
+    { path: 'Compras', component: Compras },
+    { path: 'NuevoProducto', component: Form },
+    { path: 'NuevoCliente', component: NuevoCliente },
+    { path: 'NuevaCompra', component: NuevaCompra },
+    { path: 'Reportes', component: Reportes },
+    { path: 'Formulario', component: Formulario },
+    { path: 'Login', component: Login },
+];
