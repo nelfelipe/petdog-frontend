@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ComprasService {
 
-  private readonly url = 'http://localhost:3000/api/v1/compras';
+  private readonly url = 'https://petdog-backend-production.up.railway.app/api/v1/compras';
 
   constructor(private http: HttpClient) {}
 

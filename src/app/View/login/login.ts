@@ -14,7 +14,7 @@ import { LoginService } from '../../Services/login';
   templateUrl: './login.html',
 })
 export class Login {
-  private readonly url = 'http://localhost:3000/api/v1/login';
+  private readonly url = 'https://petdog-backend-production.up.railway.app/api/v1/login';
 
   form: FormGroup;
 
